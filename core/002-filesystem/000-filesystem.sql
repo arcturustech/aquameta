@@ -22,4 +22,36 @@ begin
   perform lo_unlink(l_oid);
 end;$$;
 
+
+--
+--create extension fs_fdw;
+--
+--create server fs_srv foreign data wrapper fs_fdw options (debug 'true');
+--
+--create foreign table filesystem.'file' (
+--	id text,
+--	directory_id text,
+--	permissions text,
+--	links integer,
+--	size integer,
+--	owner text,
+--	group text,
+--	last_modification text,
+--	name text,
+--	content bytea
+--) server fs_srv options (table_name 'file')
+--
+--create foreign table filesystem.'directory' (
+--	id text,
+--	parent_id text,
+--	permissions text,
+--	links integer,
+--	size integer,
+--	owner text,
+--	group text,
+--	last_modification text,
+--	name text
+--) server fs_srv options (table_name 'directory')
+--
+
 commit;
