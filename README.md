@@ -1,65 +1,48 @@
-# Aquameta
+aquameta
+========
 
-Aquameta Labs, Portland Oregon
+Aquameta is a web-based development environment designed on the first principle
+of datafication, and build entirely in PostgreSQL.
 
-Copyright (c) 2015.  All rights reserved.
+For more info, see [aquameta.com](http://aquameta.com/).
 
-A web application development platform built entirely in PostgreSQL.
+Status
+------
 
-[http://aquameta.com/](http://aquameta.com/)
+Aquameta is in early prototype stages, pre-0.1 release.
 
-## Prototype!
+Features
+--------
 
-Please note - this code is an early prototype stages.  Meta and bundle layers
-are approaching completion, but the remaining layers are from early on in the
-project, and need a complete refactor.
+- Meta - Writable system catalog for PostgreSQL
+- File System - A bi-directional file system integration system
+- Events - Pub/sub data change events API
+- Web server - Hosts arbitrary resources and a REST/JSON API for database operations
+- Bundles - A version control system similar to git but for database rows intead of files
+- Widgets - Modular web components that can be reused
+- P2P - Peer-to-peer communication between Aquameta nodes
 
-## Project Summary
+Installation
+------------
 
-http://blog.aquameta.com/2015/08/28/introducing-aquameta/
+We recommend installing via Docker.  See the [Dockerfile](https://github.com/aquametalabs/aquameta/blob/master/Dockerfile) for instructions.
 
-Join #aquameta on irc.freenode.net.
-
-## Install using Docker
-
-You can quickly get up and running with Aquameta via Docker.  See our [Dockerfile](https://github.com/aquametalabs/aquameta/blob/master/Dockerfile) for more information.
-
-## Build from Source
-
-### 1. Install PostgreSQL 9.4
-
-Install PostgresSQL 9.4, and the postgresql-contrib package.  On Mac, try out
-Postgres.app.  (see http://www.postgresql.org/download/)
+You can also build from source.  See the [INSTALL](https://github.com/aquametalabs/aquameta/blob/master/INSTALL.md) file.
 
 
-### 2. Create a Superuser
+Contribute
+----------
 
-Under Linux, you may need to create a PostgreSQL superuser.  Postgres.app for
-Mac does this for you, but for other PostgreSQL distributions:
+- Issue Tracker: [github.com/aquametalabs/aquameta/issues](http://github.com/aquametalabs/aquameta/issues)
+- Source Code: [github.com/aquametalabs/aquameta](github.com/aquametalabs/aquameta)
 
-```
-eric@34f81a644855:~$ sudo -iu postgres
-postgres@34f81a644855:~$ psql
-psql (9.4.1)
-Type "help" for help.
+Support
+-------
 
-postgres=# create role eric superuser login;
-CREATE ROLE
-postgres=# \q
-postgres@34f81a644855:~$
-```
+If you are having issues, please let us know.
+We have a mailing list located at: aquameta-discuss@google-groups.com
 
+License
+-------
 
-### 3. Install Aquameta into PostgreSQL
-
-Run `./build.sh` as the user who has superuser access
-
-
-### 4. Build and install the webserver
-
-See [core/004-aquameta_endpoint/servers/background_worker/README.md](core/004-aquameta_endpoint/servers/background_worker/README.md).
-
-
-### 5. Browse to `localhost`
-
-[http://localhost:8080/](http://localhost:8080/)
+The project is licensed under the GPL.
